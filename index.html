@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Console JavaScript :</h1>
+    <label>Auto-run</label>
+    <input type="checkbox" id="autorun" checked>
+    <br>
+    <textarea id="textarea" rows="20" placeholder="Votre code ici"></textarea>
+    <br>
+    <div id="result"></div>
+    <br>
+    <button id="execute" style="display: none">Execute</button>
+
+    <script>
+        var textarea = document.getElementById('textarea'),
+            checkbox = document.getElementById('autorun'),
+            button = document.getElementById('execute'),
+            result = document.getElementById('result'),
+            str = textarea.value;
+
+        function log(...obj) {
+            result.innerHTML = obj.toString();
+        }
+
+        function debug(...obj) {
+            result.innerHTML = "";
+            for (o of obj) result.innerHTML += o.toSource() + "<br>";
+        }
+
+        function autorun() {
+            setTimeout(function () {
+                str = "try{" + textarea.value + "}catch(e){log(e)}";
+                eval(str);
+            }, 100);
+        }
+
+        eval(str);
+
+        textarea.addEventListener("keydown", autorun);
+
+        checkbox.addEventListener("click", function() {
+            if (checkbox.checked) {
+                textarea.addEventListener("keydown", autorun);
+                button.style.display = "none";
+            }
+            else {
+                textarea.removeEventListener("keydown", autorun);
+                button.style.display = "";
+            }
+        });
+
+        button.addEventListener("click", function () {
+            str = "try{" + textarea.value + "}catch(e){log(e)}";
+            eval(str);
+        });
+
+    </script>
+
+</body>
+</html>
