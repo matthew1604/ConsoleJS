@@ -1,19 +1,55 @@
+* {
+    cursor: default;
+}
+
+*:focus {
+    outline: 0;
+}
+
 body {
     font-family: "DejaVu Sans", sans-serif;
 }
 
-#textarea {
+#head {
+    height: 12%;
+    margin-bottom: 10px;
+}
+
+#body {
+    height: 80%;
+    margin-bottom: 10px;
+}
+
+#foot {
+    height: 5%;
+}
+
+textarea {
     resize: none;
-    width: 98%;
+    width: 98vw;
+    height: 37vh;
     padding: 4px;
-    border: 1px solid lightblue;
     border-radius: 5px;
 }
 
+#textarea {
+    border: 1px solid lightblue;
+}
+
 #result {
-    width: 98%;
-    height: 20em;
-    padding: 4px;
     border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+button {
+    padding: 4px;
+    border: 1px solid lightgray;
     border-radius: 5px;
+    background-color: white;
+}
+
+button:active {
+    background-color: lightgray;
+    border-color: gray;
 }

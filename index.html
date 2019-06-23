@@ -6,60 +6,23 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Console JavaScript :</h1>
-    <label>Auto-run</label>
-    <input type="checkbox" id="autorun" checked>
-    <br>
-    <textarea id="textarea" rows="20" placeholder="Votre code ici"></textarea>
-    <br>
-    <div id="result"></div>
-    <br>
-    <button id="execute" style="display: none">Execute</button>
+    <div id="head">
+        <h1>Console JavaScript :</h1>
+        <label>Auto-run</label>
+        <input type="checkbox" id="autorun" checked>
+        <label style="margin-left: 10px;">Debug</label>
+        <input type="checkbox" id="debug">
+        <button id="clear" style="margin-left: 10px;">Clear</button>
+    </div>
+    <div id="body">
+        <textarea id="textarea" rows="20" placeholder="Code here..."></textarea>
+        <textarea id="result" disabled></textarea>
+    </div>
+    <div class="foot">
+        <button id="execute" style="display: none">Execute</button>
+    </div>
 
-    <script>
-        var textarea = document.getElementById('textarea'),
-            checkbox = document.getElementById('autorun'),
-            button = document.getElementById('execute'),
-            result = document.getElementById('result'),
-            str = textarea.value;
-
-        function log(...obj) {
-            result.innerHTML = obj.toString();
-        }
-
-        function debug(...obj) {
-            result.innerHTML = "";
-            for (o of obj) result.innerHTML += o.toSource() + "<br>";
-        }
-
-        function autorun() {
-            setTimeout(function () {
-                str = "try{" + textarea.value + "}catch(e){log(e)}";
-                eval(str);
-            }, 100);
-        }
-
-        eval(str);
-
-        textarea.addEventListener("keydown", autorun);
-
-        checkbox.addEventListener("click", function() {
-            if (checkbox.checked) {
-                textarea.addEventListener("keydown", autorun);
-                button.style.display = "none";
-            }
-            else {
-                textarea.removeEventListener("keydown", autorun);
-                button.style.display = "";
-            }
-        });
-
-        button.addEventListener("click", function () {
-            str = "try{" + textarea.value + "}catch(e){log(e)}";
-            eval(str);
-        });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
