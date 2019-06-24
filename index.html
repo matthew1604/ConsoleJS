@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Index</title>
+    <title>ConsoleJS</title>
 </head>
 <body style="overflow: hidden">
     <div id="head">
         <h1>Console JavaScript :</h1>
-        <label>Auto-run</label>
-        <input type="checkbox" id="autorun" checked>
-        <label style="margin-left: 10px;">Debug</label>
-        <input type="checkbox" id="debug">
-        <button id="clear" style="margin-left: 10px;">Clear</button>
     </div>
     <div id="body">
-        <textarea id="textarea" rows="20" placeholder="Code here..."></textarea>
-        <textarea id="result" disabled></textarea>
-    </div>
-    <div class="foot">
-        <button id="execute" style="display: none">Execute</button>
+        <div id="buttons">
+            <div>
+                <label for="autorun">Auto-run</label>
+                <input type="checkbox" id="autorun" checked>
+            </div>
+            <div>
+                <label for="debug">Debug</label>
+                <input type="checkbox" id="debug">
+            </div>
+            <button id="clear">Clear</button>
+            <button id="execute">Execute</button>
+        </div>
+        <div>
+            <textarea id="textarea" rows="20" placeholder="Code here..."></textarea>
+            <textarea id="result" disabled></textarea>
+        </div>
     </div>
 
     <script src="script.js"></script>

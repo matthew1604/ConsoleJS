@@ -10,24 +10,19 @@ body {
     font-family: "DejaVu Sans", sans-serif;
 }
 
-#head {
-    height: 12%;
+#head, #body, #buttons {
     margin-bottom: 10px;
 }
 
-#body {
-    height: 80%;
-    margin-bottom: 10px;
-}
-
-#foot {
-    height: 5%;
+#buttons > * {
+    margin-left: 15px;
+    display: inline;
 }
 
 textarea {
     resize: none;
     width: 95vw;
-    height: 37vh;
+    height: 40vh;
     padding: 4px;
     border-radius: 5px;
 }
@@ -43,10 +38,11 @@ textarea {
 }
 
 button {
-    padding: 4px;
+    padding: 7px;
     border: 1px solid lightgray;
     border-radius: 5px;
     background-color: white;
+    font-size: 1em;
 }
 
 button:active {
