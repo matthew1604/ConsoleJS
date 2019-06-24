@@ -29,6 +29,7 @@ textarea {
 
 #textarea {
     border: 1px solid lightblue;
+    font-size: 2em;
 }
 
 #result {
