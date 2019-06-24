@@ -29,24 +29,33 @@ textarea {
 
 #textarea {
     border: 1px solid lightblue;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 #result {
     border: 1px solid black;
-    background-color: white;
-    color: black;
+
 }
 
 button {
     padding: 7px;
-    border: 1px solid lightgray;
+    border: 1px solid;
     border-radius: 5px;
-    background-color: white;
     font-size: 1em;
 }
 
-button:active {
-    background-color: lightgray;
-    border-color: gray;
+button, input[type=checkbox] {
+    cursor: pointer;
+}
+
+#clear {
+    background-color: rgba(255, 0, 0, 0.85);
+    border-color: darkred;
+    color: white;
+}
+
+#execute {
+    background-color: rgba(0, 128, 0, 0.85);
+    border-color: darkgreen;
+    color: white;
 }
