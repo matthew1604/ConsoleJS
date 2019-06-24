@@ -1,6 +1,8 @@
 let textarea = document.getElementById('textarea'),
     autorunCheckbox = document.getElementById('autorun'),
     debugCheckbox = document.getElementById('debug'),
+    undoButton = document.getElementById('undo'),
+    redoButton = document.getElementById('redo'),
     executeButton = document.getElementById('execute'),
     clearButton = document.getElementById('clear'),
     result = document.getElementById('result');
@@ -43,6 +45,14 @@ autorunCheckbox.addEventListener("click", function() {
 });
 
 debugCheckbox.addEventListener("click", exec);
+
+undoButton.addEventListener("click", function () {
+    document.execCommand('undo',false,"");
+});
+
+redoButton.addEventListener("click", function () {
+    document.execCommand('redo',false,"");
+});
 
 executeButton.addEventListener("click", function () {
     clear();

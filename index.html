@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>ConsoleJS</title>
 </head>
@@ -14,6 +16,10 @@
     </div>
     <div id="body">
         <div id="buttons">
+            <div>
+                <button id="undo"><i class="fas fa-undo-alt"></i></button>
+                <button id="redo"><i class="fas fa-redo-alt"></i></button>
+            </div>
             <div>
                 <label for="autorun">Auto-run</label>
                 <input type="checkbox" id="autorun" checked>
@@ -26,7 +32,7 @@
             <button id="execute">Execute</button>
         </div>
         <div>
-            <textarea id="textarea" rows="20" placeholder="Code here..." spellcheck="false"></textarea>
+            <textarea id="textarea" name="texta" rows="20" placeholder="Code here..." spellcheck="false"></textarea>
             <textarea id="result" readonly></textarea>
         </div>
     </div>

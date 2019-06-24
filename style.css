@@ -43,12 +43,18 @@ textarea {
 
 button {
     padding: 7px;
-    border: 1px solid;
+    border: 1px solid lightgray;
     border-radius: 5px;
+    background-color: white;
     font-size: 1em;
 }
 
-button, input[type=checkbox] {
+button:active {
+    background-color: lightgray;
+    border-color: gray;
+}
+
+button, button > *, input[type=checkbox], label {
     cursor: pointer;
 }
 
@@ -58,8 +64,18 @@ button, input[type=checkbox] {
     color: white;
 }
 
+#clear:active {
+    background-color: rgba(139, 0, 0, 0.85);
+    border-color: black;
+}
+
 #execute {
     background-color: rgba(0, 128, 0, 0.85);
     border-color: darkgreen;
     color: white;
+}
+
+#execute:active {
+    background-color: rgba(0, 100, 0, 0.85);
+    border-color: black;
 }
