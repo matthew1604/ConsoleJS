@@ -1,4 +1,5 @@
-let textarea = document.getElementById('textarea'),
+let interval,
+    textarea = document.getElementById('textarea'),
     autorunCheckbox = document.getElementById('autorun'),
     debugCheckbox = document.getElementById('debug'),
     undoButton = document.getElementById('undo'),
@@ -21,26 +22,23 @@ function clear() {
 }
 
 function autorun() {
-    setTimeout(function () {
-        if (textarea.value !== "") {
-            exec();
-        } else clear();
-    }, 100);
+    interval = setInterval(function () {
+        if (textarea.value !== "") exec();
+        else clear();
+    }, 150);
 }
 
 exec();
-
-textarea.addEventListener("keydown", autorun);
+autorun();
 
 autorunCheckbox.addEventListener("click", function() {
     if (autorunCheckbox.checked) {
         log = function(...obj) { result.innerHTML = obj.toString(); };
-        textarea.addEventListener("keydown", autorun);
-        exec();
+        autorun();
     }
     else {
         log = function(...obj) { result.innerHTML += obj.toString(); };
-        textarea.removeEventListener("keydown", autorun);
+        clearInterval(interval);
     }
 });
 
@@ -59,4 +57,9 @@ executeButton.addEventListener("click", function () {
     exec();
 });
 
-clearButton.addEventListener("click",clear);
+clearButton.addEventListener("click",function () {
+    //document.getElementById("modal").style.display = "";
+
+    textarea.value = "";
+    clear();
+});
