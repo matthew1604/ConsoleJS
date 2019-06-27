@@ -42,29 +42,6 @@ textarea {
 
 }
 
-#modal {
-    position: fixed;
-    border: 3px solid grey;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    padding: 10px;
-    width: 40vw;
-    height: 15vh;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-}
-
-
-#modal > h3 {
-    text-align: center;
-}
-
-#modal > button {
-    float: right;
-    margin: 20px 0 0 10px;
-}
-
 button {
     padding: 7px;
     border: 1px solid lightgray;
@@ -82,13 +59,13 @@ button, button > *, input[type=checkbox], label {
     cursor: pointer;
 }
 
-#clear, #modal > #yes {
+#clear {
     background-color: rgba(255, 0, 0, 0.85);
     border-color: darkred;
     color: white;
 }
 
-#clear:active, #modal > #yes:active {
+#clear:active {
     background-color: rgba(139, 0, 0, 0.85);
     border-color: black;
 }
