@@ -46,6 +46,7 @@ textarea {
     position: fixed;
     border: 3px solid grey;
     border-radius: 10px;
+    background-color: whitesmoke;
     padding: 10px;
     width: 40vw;
     height: 15vh;
@@ -61,6 +62,7 @@ textarea {
 
 #modal > button {
     float: right;
+    margin: 20px 0 0 10px;
 }
 
 button {
@@ -80,13 +82,13 @@ button, button > *, input[type=checkbox], label {
     cursor: pointer;
 }
 
-#clear {
+#clear, #modal > #yes {
     background-color: rgba(255, 0, 0, 0.85);
     border-color: darkred;
     color: white;
 }
 
-#clear:active {
+#clear:active, #modal > #yes:active {
     background-color: rgba(139, 0, 0, 0.85);
     border-color: black;
 }

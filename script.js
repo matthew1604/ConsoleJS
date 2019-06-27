@@ -42,7 +42,10 @@ autorunCheckbox.addEventListener("click", function() {
     }
 });
 
-debugCheckbox.addEventListener("click", exec);
+debugCheckbox.addEventListener("click", function () {
+    clear();
+    exec();
+});
 
 undoButton.addEventListener("click", function () {
     document.execCommand('undo',false,"");
@@ -58,8 +61,15 @@ executeButton.addEventListener("click", function () {
 });
 
 clearButton.addEventListener("click",function () {
-    //document.getElementById("modal").style.display = "";
+    document.getElementById("modal").style.display = "";
+});
 
+document.getElementById('yes').addEventListener("click", function () {
     textarea.value = "";
     clear();
+    document.getElementById("modal").style.display = "none";
+});
+
+document.getElementById('no').addEventListener("click", function () {
+    document.getElementById("modal").style.display = "none";
 });
