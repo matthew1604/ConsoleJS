@@ -31,7 +31,7 @@ function table(array) {
         }
         if (array.length === 0) log("Array(0)\n");
         else log("Array(" + array.length + ") :\n" + str);
-    } else log("table() error : not an array");
+    } else log(array);
 }
 
 function clear() {
