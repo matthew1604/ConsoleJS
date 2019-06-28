@@ -17,6 +17,23 @@ function log(...obj) {
     result.innerHTML = obj.toString();
 }
 
+function table(array) {
+    let str = "";
+    if (Array.isArray(array)) {
+        for (let i in array) {
+            str += "[" + i + "] : ";
+            switch (typeof array[i]) {
+                case "string": str += "\"" + array[i] + "\""; break;
+                case "object": if (Array.isArray(array[i])) str += "Array(" + array[i].length + ")"; else str += "Object"; break;
+                default: str += array[i];
+            }
+            str += "\n";
+        }
+        if (array.length === 0) log("Array(0)\n");
+        else log("Array(" + array.length + ") :\n" + str);
+    } else log("table() error : not an array");
+}
+
 function clear() {
     result.innerHTML = "";
 }
