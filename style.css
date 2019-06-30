@@ -18,16 +18,30 @@ h1 {
     margin-bottom: 10px;
 }
 
+#body {
+    height: 87vh;
+}
+
 #buttons > * {
     margin-left: 15px;
     display: inline;
 }
 
+#textareas {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+}
+
+#textareas > * {
+    height: 50%;
+    margin-bottom: 10px;
+}
+
 textarea {
     resize: none;
-    width: 95vw;
-    height: 40vh;
     padding: 4px;
+    height: 30vh;
     border-radius: 5px;
     font-size: 1.5em;
     color: #0f1f1f;

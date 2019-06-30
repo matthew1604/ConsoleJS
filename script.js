@@ -34,6 +34,10 @@ function table(array) {
     } else log(array);
 }
 
+function append(str) {
+    $("#textareas").append(str);
+}
+
 function clear() {
     result.innerHTML = "";
 }
