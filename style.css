@@ -33,18 +33,14 @@ h1 {
     height: 95%;
 }
 
-#textareas > * {
-    height: 50%;
-    margin-bottom: 10px;
-}
-
-textarea {
+#textarea, #result {
     resize: none;
     padding: 4px;
-    height: 30vh;
     border-radius: 5px;
     font-size: 1.5em;
     color: #0f1f1f;
+    height: 50%;
+    margin-bottom: 10px;
 }
 
 #textarea {
