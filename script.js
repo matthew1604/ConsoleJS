@@ -17,6 +17,14 @@ function log(...obj) {
     result.innerHTML = obj.toString();
 }
 
+function color(c) {
+    if (/^#?(([0123456789ABCDEFabcdef]){3}){1,2}$/.test(c)) {
+        $("#result").css("background-color", "#"+c.replace("#", ""));
+    } else {
+        $("#result").css("background-color", c);
+    }
+}
+
 function table(array) {
     let str = "";
     if (Array.isArray(array)) {
